@@ -1,4 +1,4 @@
-# 微信支付
+# 金蝶电子发票SDK
 
 #### Description
 金蝶电子发票SDK
