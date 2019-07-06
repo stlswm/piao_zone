@@ -31,6 +31,11 @@ class Client
     public $secret;
 
     /**
+     * @var string 请求加密秘钥
+     */
+    public $encryptKey;
+
+    /**
      * @var bool
      */
     private $isTest = FALSE;
@@ -48,14 +53,30 @@ class Client
     }
 
     /**
+     * 加密请求体
+     *
+     * @param string $body
+     *
+     * @return string
+     */
+    private function encryptBody(string $body): string
+    {
+        $bodyEncrypt = openssl_encrypt($body, 'AES-128-ECB', $this->encryptKey, OPENSSL_RAW_DATA);
+        return bin2hex($bodyEncrypt);
+    }
+
+    /**
+     * 请求接口
+     *
      * @param string $router
      * @param Req    $req
+     * @param bool   $encrypt
      *
      * @return string
      * @throws GuzzleException
      * @throws Exception
      */
-    public function request(string $router, Req $req): string
+    public function request(string $router, Req $req, bool $encrypt = FALSE): string
     {
         $api = self::$domain;
         if ($this->isTest) {
@@ -64,12 +85,16 @@ class Client
         if (strpos($router, '/') !== 0) {
             $router = '/' . $router;
         }
+        $body = json_encode($req);
+        if ($encrypt) {
+            $body = $this->encryptBody($body);
+        }
         $client = new \GuzzleHttp\Client(['base_uri' => $api]);
         $response = $client->request('POST', $router, [
             'headers' => [
                 'Content-Type' => 'application/json',
             ],
-            'body'    => json_encode($req),
+            'body'    => $body,
         ]);
         if ($response->getStatusCode() != 200) {
             throw new Exception('网络异常：' . $response->getBody()->getContents());
@@ -80,14 +105,16 @@ class Client
     /**
      * @param string $clientId
      * @param string $secret
+     * @param string $encryptKey
      *
      * @return Client
      */
-    public static function newClient(string $clientId, string $secret): Client
+    public static function newClient(string $clientId, string $secret, string $encryptKey): Client
     {
         $client = new Client();
         $client->clientId = $clientId;
         $client->secret = $secret;
+        $client->encryptKey = $encryptKey;
         return $client;
     }
 }

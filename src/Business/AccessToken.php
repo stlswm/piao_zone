@@ -17,8 +17,7 @@ use stlswm\PiaoZone\Response\AccessTokenRes;
 class AccessToken
 {
     /**
-     * @param Client         $client
-     * @param AccessTokenReq $accessTokenReq
+     * @param Client $client
      *
      * @return AccessTokenRes
      * @throws GuzzleException

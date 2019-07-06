@@ -26,7 +26,7 @@ class InvoiceCreate
         InvoiceCreateReq $invoiceCreateReq
     ): InvoiceCreateRes {
         $accessTokenRes = new InvoiceCreateRes();
-        $response = $client->request("/m5/bill/invoice/create?access_token={$accessToken}", $invoiceCreateReq);
+        $response = $client->request("/m5/bill/invoice/create?access_token={$accessToken}", $invoiceCreateReq, TRUE);
         $bool = Json::unMarshal($response, $accessTokenRes);
         if (!$bool) {
             throw new Exception('无法解析返回：' . $response);
