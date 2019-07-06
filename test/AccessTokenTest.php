@@ -23,6 +23,6 @@ class AccessTokenTest extends TestCase
         $client->asTest();
         $req = new AccessTokenReq();
         $req->client_id = $client->clientId;
-        var_dump(AccessToken::req($client, $req));
+        var_dump(AccessToken::req($client));
     }
 }
