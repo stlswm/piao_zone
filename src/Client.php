@@ -22,11 +22,11 @@ class Client
      */
     private static $domainTest = 'https://api-dev.piaozone.com';
     /**
-     * @var string 开发客户端id
+     * @var string 客户端id
      */
     public $clientId;
     /**
-     * @var string 加密秘钥
+     * @var string 客户端秘钥
      */
     public $secret;
 
