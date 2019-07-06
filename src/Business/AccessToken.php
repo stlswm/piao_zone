@@ -24,10 +24,15 @@ class AccessToken
      * @throws GuzzleException
      * @throws Exception
      */
-    public static function req(Client $client, AccessTokenReq $accessTokenReq): AccessTokenRes
+    public static function req(Client $client): AccessTokenRes
     {
-        $accessTokenRes = new AccessTokenRes;
+        $timestamp = time();
+        $accessTokenReq = new AccessTokenReq;
+        $accessTokenReq->client_id = $client->clientId;
+        $accessTokenReq->sign = md5($client->clientId . $client->secret . $timestamp);
+        $accessTokenReq->timestamp = $timestamp;
         $response = $client->request('/base/oauth/token', $accessTokenReq);
+        $accessTokenRes = new AccessTokenRes;
         $bool = Json::unMarshal($response, $accessTokenRes);
         if (!$bool) {
             throw new Exception('无法解析返回：' . $response);

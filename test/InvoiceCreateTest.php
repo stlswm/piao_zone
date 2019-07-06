@@ -17,7 +17,8 @@ class InvoiceCreateTest extends TestCase
      */
     public function testReq()
     {
-        $client = Client::newClient('1', '2');
+        $client = Client::newClient('47jJn7w4Kc6oHl', 'UmuZA9Rf7366KQDa84a72cg3x8r9c7');
+        $client->asTest();
         $req = new InvoiceCreateReq();
         var_dump(\stlswm\PiaoZone\Business\InvoiceCreate::req($client, '111', $req));
     }
