@@ -58,11 +58,16 @@ class Client
      * @param string $body
      *
      * @return string
+     * @throws Exception
+     *
      */
     private function encryptBody(string $body): string
     {
+        if (strlen($this->encryptKey) != 16) {
+            throw new Exception('错误的加密秘钥');
+        }
         $bodyEncrypt = openssl_encrypt($body, 'AES-128-ECB', $this->encryptKey, OPENSSL_RAW_DATA);
-        return bin2hex($bodyEncrypt);
+        return base64_encode($bodyEncrypt);
     }
 
     /**
