@@ -40,6 +40,11 @@ class Client
      */
     private $isTest = FALSE;
 
+    /**
+     * @var string 接口请求凭证
+     */
+    private $token;
+
 
     /**
      * 设置为测试用客户端
@@ -50,6 +55,22 @@ class Client
     {
         $this->isTest = TRUE;
         return $this;
+    }
+
+    /**
+     * @param string $token
+     */
+    public function setToken(string $token)
+    {
+        $this->token = $token;
+    }
+
+    /**
+     * @return string
+     */
+    public function getToken(): string
+    {
+        return $this->token;
     }
 
     /**

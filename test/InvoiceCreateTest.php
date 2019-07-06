@@ -21,6 +21,6 @@ class InvoiceCreateTest extends TestCase
         $client = Client::newClient('', '', '');
         $client->asTest();
         $req = new InvoiceCreateReq();
-        var_dump(InvoiceCreate::req($client, '4968422f42fb6554943c2f7195c1eea4', $req));
+        var_dump(InvoiceCreate::req($client, $req));
     }
 }

@@ -13,7 +13,6 @@ class InvoiceCreate
 {
     /**
      * @param Client           $client
-     * @param string           $accessToken
      * @param InvoiceCreateReq $invoiceCreateReq
      *
      * @return InvoiceCreateRes
@@ -22,11 +21,11 @@ class InvoiceCreate
      */
     public static function req(
         Client $client,
-        string $accessToken,
         InvoiceCreateReq $invoiceCreateReq
     ): InvoiceCreateRes {
+        $token = $client->getToken();
         $accessTokenRes = new InvoiceCreateRes();
-        $response = $client->request("/m5/bill/invoice/create?access_token={$accessToken}", $invoiceCreateReq, TRUE);
+        $response = $client->request("/m5/bill/invoice/create?access_token={$token}", $invoiceCreateReq, TRUE);
         $bool = Json::unMarshal($response, $accessTokenRes);
         if (!$bool) {
             throw new Exception('无法解析返回：' . $response);
