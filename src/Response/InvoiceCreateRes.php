@@ -20,9 +20,7 @@ class InvoiceCreateRes extends ClassMap
     public function getClassMap(): array
     {
         return [
-            'data' => [
-                InvoiceCreateDataRes::class,
-            ]
+            'data' => InvoiceCreateDataRes::class,
         ];
     }
 
