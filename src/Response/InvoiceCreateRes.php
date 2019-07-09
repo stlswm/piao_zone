@@ -13,6 +13,10 @@ use stlswm\JsonObject\ClassMap;
 class InvoiceCreateRes extends ClassMap
 {
     use Res;
+    /**
+     * @var array
+     */
+    public $data = [];
 
     /**
      * @return array
@@ -23,9 +27,4 @@ class InvoiceCreateRes extends ClassMap
             'data' => InvoiceCreateDataRes::class,
         ];
     }
-
-    /**
-     * @var array
-     */
-    public $data = [];
 }
