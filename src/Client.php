@@ -24,16 +24,16 @@ class Client
     /**
      * @var string 客户端id
      */
-    public $clientId;
+    public $clientId = '';
     /**
      * @var string 客户端秘钥
      */
-    public $secret;
+    public $secret = '';
 
     /**
      * @var string 请求加密秘钥
      */
-    public $encryptKey;
+    public $encryptKey = '';
 
     /**
      * @var bool
@@ -43,7 +43,7 @@ class Client
     /**
      * @var string 接口请求凭证
      */
-    private $token;
+    private $token = '';
 
 
     /**
