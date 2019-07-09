@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9915fda9d516f209d42e83334bc52de",
+    "content-hash": "1a05457a87029dc113ad58427fce8e0e",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -187,11 +187,11 @@
         },
         {
             "name": "stlswm/json-object",
-            "version": "v1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://gitee.com/stlswm/json_object.git",
-                "reference": "dd03e49d20271e08f3d64abdcfef5789ca631f64"
+                "reference": "2d215721af39992d1d494283dab7421f31620fa1"
             },
             "require": {
                 "ext-json": "*",
@@ -206,7 +206,24 @@
                     "stlswm\\JsonObject\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/"
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "wang min",
+                    "email": "stlswm@163.com",
+                    "homepage": "https://www.stlswm.com"
+                }
+            ],
+            "description": "php json parse to object",
+            "keywords": [
+                "json",
+                "object",
+                "stlswm"
+            ],
+            "time": "2019-07-08T09:24:25+00:00"
         }
     ],
     "packages-dev": [
@@ -1207,7 +1224,8 @@
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.0",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-openssl": "*"
     },
     "platform-dev": []
 }
