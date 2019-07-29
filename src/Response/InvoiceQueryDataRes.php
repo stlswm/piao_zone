@@ -119,7 +119,7 @@ class InvoiceQueryDataRes extends ClassMap
     /**
      * @var string pdfUrl 发票pdf下载地址
      */
-    public $pdfUrl;
+    public $pdfurl;
     /**
      * @var string 发票种类：1、普通电子发票；2、电子发票专票；3、普通纸质发票；4、专用纸质发票；5、普通纸质卷票
      */
