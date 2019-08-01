@@ -32,7 +32,7 @@ class InvalidBlue
     ): InvalidBlueRes {
         $token = $client->getToken();
         $invalidBlueRes = new InvalidBlueRes();
-        $response = $client->request("/ m5/bill/invoice/invalid?access_token={$token}", $invalidBlueReq, TRUE);
+        $response = $client->request("/m5/bill/invoice/invalid?access_token={$token}", $invalidBlueReq, TRUE);
         $bool = Json::unMarshal($response, $invalidBlueRes);
         if (!$bool) {
             throw new Exception('无法解析返回：' . $response);
