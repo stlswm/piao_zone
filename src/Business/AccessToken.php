@@ -12,7 +12,7 @@ use stlswm\PiaoZone\Response\AccessTokenRes;
 /**
  * Class AccessToken
  *
- * @package stlswm\PiaoZone\AccessToken
+ * @package stlswm\PiaoZone\Business
  */
 class AccessToken
 {

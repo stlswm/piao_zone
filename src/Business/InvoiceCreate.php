@@ -9,6 +9,11 @@ use stlswm\PiaoZone\Client;
 use stlswm\PiaoZone\Response\InvoiceCreateRes;
 use stlswm\PiaoZone\Request\InvoiceCreateReq;
 
+/**
+ * Class InvoiceCreate
+ *
+ * @package stlswm\PiaoZone\Business
+ */
 class InvoiceCreate
 {
     /**
