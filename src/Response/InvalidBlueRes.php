@@ -3,8 +3,6 @@
 namespace stlswm\PiaoZone\Response;
 
 use stlswm\JsonObject\ClassMap;
-use stlswm\PiaoZone\Response\InvalidBlueDataRes;
-use stlswm\PiaoZone\Response\Res;
 
 /**
  * Class InvalidBlueRes
