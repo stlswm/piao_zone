@@ -11,15 +11,13 @@ use stlswm\PiaoZone\Request\InvoiceCreateReq;
 
 /**
  * Class InvoiceCreate
- *
  * @package stlswm\PiaoZone\Business
  */
 class InvoiceCreate
 {
     /**
-     * @param Client           $client
-     * @param InvoiceCreateReq $invoiceCreateReq
-     *
+     * @param  Client  $client
+     * @param  InvoiceCreateReq  $invoiceCreateReq
      * @return InvoiceCreateRes
      * @throws GuzzleException
      * @throws Exception
@@ -29,12 +27,12 @@ class InvoiceCreate
         InvoiceCreateReq $invoiceCreateReq
     ): InvoiceCreateRes {
         $token = $client->getToken();
-        $accessTokenRes = new InvoiceCreateRes();
-        $response = $client->request("/m5/bill/invoice/create?access_token={$token}", $invoiceCreateReq, TRUE);
-        $bool = Json::unMarshal($response, $accessTokenRes);
+        $createRes = new InvoiceCreateRes();
+        $response = $client->request("/m5/bill/invoice/create?access_token={$token}", $invoiceCreateReq, true);
+        $bool = Json::unMarshal($response, $createRes);
         if (!$bool) {
-            throw new Exception('无法解析返回：' . $response);
+            throw new Exception('无法解析返回：'.$response);
         }
-        return $accessTokenRes;
+        return $createRes;
     }
 }
