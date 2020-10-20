@@ -7,7 +7,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use stlswm\JsonObject\Json;
 use stlswm\PiaoZone\Client;
 use stlswm\PiaoZone\Request\InvalidBlueReq;
-use stlswm\PiaoZone\Request\InvalidBlueRes;
+use stlswm\PiaoZone\Response\InvalidBlueRes;
 
 /**
  * Class InvalidBlue
