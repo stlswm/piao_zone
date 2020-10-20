@@ -6,7 +6,7 @@ use stlswm\PiaoZone\Business\InvoiceQuery;
 use stlswm\PiaoZone\Client;
 use stlswm\PiaoZone\Request\InvoiceQueryReq;
 
-require 'Composer.php';
+require "../vendor/autoload.php";
 
 /**
  * Class InvoiceQueryTest

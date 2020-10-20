@@ -6,7 +6,7 @@ use stlswm\PiaoZone\Business\InvoiceCreate;
 use stlswm\PiaoZone\Client;
 use stlswm\PiaoZone\Request\InvoiceCreateReq;
 
-require 'Composer.php';
+require "../vendor/autoload.php";
 
 /**
  * Class InvoiceCreateReq
@@ -20,6 +20,7 @@ class InvoiceCreateTest extends TestCase
     {
         $client = Client::newClient('', '', '');
         $client->asTest();
+        $client->setToken('');
         $req = new InvoiceCreateReq();
         var_dump(InvoiceCreate::req($client, $req));
     }

@@ -7,7 +7,6 @@ use stlswm\JsonObject\ClassMap;
 
 /**
  * Class InvoiceQueryRes
- *
  * @package stlswm\PiaoZone\Response
  */
 class InvoiceQueryRes extends ClassMap
@@ -25,7 +24,7 @@ class InvoiceQueryRes extends ClassMap
     }
 
     /**
-     * @var array
+     * @var InvoiceQueryDataRes $data
      */
-    public $data = [];
+    public $data;
 }

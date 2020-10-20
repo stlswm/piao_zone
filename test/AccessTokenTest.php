@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 use stlswm\PiaoZone\Business\AccessToken;
 use stlswm\PiaoZone\Client;
 
-require 'Composer.php';
+require "../vendor/autoload.php";
 
 /**
  * Class AccessTokenTest

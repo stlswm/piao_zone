@@ -14,9 +14,9 @@ class InvalidBlueRes extends ClassMap
     use Res;
 
     /**
-     * @var array
+     * @var InvalidBlueDataRes $data
      */
-    public $data = [];
+    public $data;
 
     /**
      * @return array

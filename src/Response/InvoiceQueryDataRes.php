@@ -7,7 +7,6 @@ use stlswm\JsonObject\ClassMap;
 
 /**
  * Class InvoiceQueryDataRes
- *
  * @package stlswm\PiaoZone\Response
  */
 class InvoiceQueryDataRes extends ClassMap
@@ -129,7 +128,7 @@ class InvoiceQueryDataRes extends ClassMap
      */
     public $invoiceStatus;
     /**
-     * @var array 发票内容明细数组
+     * @var InvoiceQueryDataItemRes[] 发票内容明细数组
      */
     public $items;
 

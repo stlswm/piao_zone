@@ -7,16 +7,16 @@ use stlswm\JsonObject\ClassMap;
 
 /**
  * Class InvoiceCreateReq
- *
  * @package stlswm\PiaoZone\Response
  */
 class InvoiceCreateRes extends ClassMap
 {
     use Res;
+
     /**
-     * @var array
+     * @var InvoiceCreateDataRes $data
      */
-    public $data = [];
+    public $data;
 
     /**
      * @return array
